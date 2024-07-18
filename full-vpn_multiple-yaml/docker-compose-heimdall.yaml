@@ -21,6 +21,8 @@ services:
       - PGID=${PGID:?err}
       - UMASK=${UMASK:?err}
       - TZ=${TIMEZONE:?err}
+    ports:
+      - 80:80
 
 # NOTE: Heimdall MUST NOT connect to the Gluetun VPN container
 

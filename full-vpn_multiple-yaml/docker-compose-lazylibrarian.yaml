@@ -13,5 +13,3 @@ services:
       - ${FOLDER_FOR_MEDIA:?err}/downloads:/downloads
       - ${FOLDER_FOR_MEDIA:?err}/books:/books #optional
     network_mode: "container:gluetun"
-    ports:
-      - 5299:5299

@@ -53,6 +53,7 @@ services:
       
       - "${TDARR_SERVER_PORT:?err}:${TDARR_SERVER_PORT:?err}"   # Tdarr: Server Port
       - "${WEBUI_PORT_TDARR:?err}:${WEBUI_PORT_TDARR:?err}"     # Tdarr: WebUI Portal
+      - 5299:5299
 
       # - "${WEBUI_PORT_PLEX:?err}:32400"         # WebUI Portal: Plex
       - 1900:1900/udp                           # DNLA Service

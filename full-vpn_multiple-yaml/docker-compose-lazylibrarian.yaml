@@ -1,0 +1,17 @@
+services:
+  lazylibrarian:
+    image: lscr.io/linuxserver/lazylibrarian:latest
+    container_name: lazylibrarian
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID:?err}
+      - PGID=${PGID:?err}
+      - TZ=${TIMEZONE:?err}
+      - DOCKER_MODS=linuxserver/mods:universal-calibre|linuxserver/mods:lazylibrarian-ffmpeg #optional
+    volumes:
+      - ${FOLDER_FOR_DATA:?err}/lazylibrarian:/config
+      - ${FOLDER_FOR_MEDIA:?err}/downloads:/downloads
+      - ${FOLDER_FOR_MEDIA:?err}/books:/books #optional
+    network_mode: "container:gluetun"
+    ports:
+      - 5299:5299
